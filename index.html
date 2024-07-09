@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Code Editor</title>
+    <!-- Include Ace Editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <!-- Include Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/1bdc8b1b62.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <h2 class="heading">Online Code Editor</h2>
+        <div class="editor-container">
+            <div class="editor-box">
+                <h2 class="editor-title"><i class="fa-brands fa-html5"></i> HTML</h2>
+                <button class="copy-button" onclick="copyText('html')"><i class="fa-sharp fa-regular fa-copy"></i></button>
+                <div id="editor-html" class="editor">&lt;!-- HTML code --&gt;
+&lt;div class="container"&gt;
+    &lt;h2&gt;Hello, HTML!&lt;/h2&gt;
+&lt;/div&gt;</div>
+            </div>
+            <div class="editor-box">
+                <h2 class="editor-title"><i class="fa-brands fa-css3"></i> CSS</h2>
+                <button class="copy-button" onclick="copyText('css')"><i class="fa-sharp fa-regular fa-copy"></i></button>
+                <div id="editor-css" class="editor">/* CSS code */
+.container {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}</div>
+            </div>
+            <div class="editor-box">
+                <h2 class="editor-title"><i class="fa-brands fa-js"></i> JavaScript</h2>
+                <button class="copy-button" onclick="copyText('js')"><i class="fa-sharp fa-regular fa-copy"></i></button>
+                <div id="editor-js" class="editor">/* JavaScript code */
+function greet() {
+    console.log('Hello, JavaScript!');
+}
+greet();</div>
+            </div>
+        </div>
+
+        <div class="bttn">
+            <button class="clear-button" onclick="clearAllText()"><i class="fa-solid fa-broom"></i></button>
+            <button id="theme-toggle-button" onclick="toggleTheme()"><i class="fa-sharp fa-solid fa-moon"></i></button>
+            <button id="info" onclick="showpopmess()"><i class="fa-solid fa-info"></i> </button>
+        </div>
+          <div class="below">
+              <h2 class="title"><i class="fa-solid fa-play"></i> Output</h2>
+              <div class="output" id="output"></div>
+          </div>  
+
+        <div id="popup" class="popup">Text copied to clipboard!</div>
+
+        <div id="popupmess" class="popup1">
+            <span class="close" onclick="hidepopmess()">&times;</span>Editor Shortcuts:
+            <object data="popmessage.text" type="text/plain"></object>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
